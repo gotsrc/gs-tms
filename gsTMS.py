@@ -7,20 +7,21 @@
 from tkinter import *
 
 class gsTMS(Frame):
-
-    def __init__(self, *args, **kwargs):
+    # def __init__(self, *args, **kwargs):
         # Insert Main init script here.
 
-    def login(self, *args, **kwargs):
+    #class Login(Frame):
+     #   def __init__(self, *args, **kwargs):
         # Insert login form here.
 
-    def register(self, *args, **kwargs):
+    #class Register(Frame):          
+    #def __init__(self, *args, **kwargs):
         # Register form here.
 
-    def main(self, *args, **kwargs):
+    #class Main(Frame):
+     #   def __init__(self, *args, **kwargs):
         # Main view here.
 
-# Insert Login Form now.
-root = Tk()
-
-root.mainloop()
+# Insert LoginForm now.
+    root = Tk()
+mainloop()
