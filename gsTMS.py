@@ -32,6 +32,10 @@ class gsTMS(tk.Tk):
 			
 		self.show_frame(Welcome)
 		
+	def show_frame(self, cont):
+		frame = self.frames[cont]
+		frame.tkraise()
+		
 def qf(quickPrint):
 	print(quickPrint)
 	
