@@ -54,6 +54,10 @@ class User(tk.Frame):
 		tk.Frame.__init__(self, parent)
 		lblLogin = ttk.Label(self, text="Login to TMS", font=LARGE_FONT)
 		lblLogin.pack(pady=10, padx=10)
+		
+		btnLogin = ttk.Button(self, text="Verify Credentials",
+			command=lambda: controller.show_frame(TMS))
+		btnLogin.pack(pady=5, padx=5)
 
 class TMS(tk.Frame):
 	def __init__(self, parent, controller):
@@ -62,5 +66,12 @@ class TMS(tk.Frame):
 		lblTMS = ttk.Label(self, text="Hello there, {user}", font=LARGE_FONT)
 		lblTMS.pack(pady=10, padx=10)
 
+		lblLogout = ttk.Label(self, text="Wanna Logout?")
+		lblLogout.pack(pady=10, padx=10)
+		
+		btnLogout = ttk.Button(self, text="Log Out",
+			command=lambda: controller.show_frame(Welcome))
+		btnLogout.pack(pady=5, padx=5)
+		
 app = gsTMS()
 app.mainloop()
