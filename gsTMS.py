@@ -4,9 +4,59 @@
 # author:     Paul "Ninj4" Chater aka PC Hater #
 ################################################
 
-from tkinter import *
+import tkinter as tk
+from tkinter import ttk
 
-#class gsTMS(Frame):
+LARGE_FONT = ("Arial", 12)
 
-root = Tk()
-mainloop()
+class gsTMS(tk.Tk):
+	def __init__(self, *args, **kwargs):
+		tk.Tk.__init__(self, *args, **kwargs)
+		
+		tk.Tk.iconbitmap(self,default=None)
+		tk.Tk.wm_title(self, "Tournament Management Software")
+		
+		container = tk.Frame(self)
+		
+		container.pack(side="top", fill="both", expand = True)
+		
+		container.grid_rowconfigure(0, weight=1)
+		container.grid_columnconfigure(0, weight=1)
+		
+		self.frames = {}
+		
+		for F in (Welcome, User, TMS):
+			frame = F(container, self)
+			self.frames[F] = frame
+			frame.grid(row=0, column=0, sticky="nsew")
+			
+		self.show_frame(Welcome)
+		
+def qf(quickPrint):
+	print(quickPrint)
+	
+class Welcome(tk.Frame):
+	def __init__(self, parent, controller):
+		tk.Frame.__init__(self, parent)
+		lblWelcome = ttk.Label(self, text="Welcome to TMS", font=LARGE_FONT)
+		lblWelcome.pack(pady=10, padx=10)
+		
+		btnLogin = ttk.Button(self, text="Login",
+			command=lambda: controller.show_Frame(User.Login)
+		btnLogin.pack(pady=5, padx=5)
+		
+class User(tk.Frame):
+	def __init__(self, parent, controller):
+		tk.Frame.__init__(self, parent)
+		lblLogin = ttk.Label(self, text="Login to TMS", font=LARGE_FONT)
+		lblLogin.pack(pady=10, padx=10)
+
+class TMS(tk.Frame):
+	def __init__(self, parent, controller):
+		tk.Frame.__init__self, parent)
+		
+		lblTMS = ttk.Label(self, text="Hello there, {user}", font=LARGE_FONT)
+		lblTMS.pack(pady=10, padx=10)
+
+app = gsTMS()
+app.mainloop()
