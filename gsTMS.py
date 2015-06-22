@@ -46,7 +46,7 @@ class Welcome(tk.Frame):
 		lblWelcome.pack(pady=10, padx=10)
 		
 		btnLogin = ttk.Button(self, text="Login",
-			command=lambda: controller.show_Frame(User.Login))
+			command=lambda: controller.show_frame(User))
 		btnLogin.pack(pady=5, padx=5)
 		
 class User(tk.Frame):
