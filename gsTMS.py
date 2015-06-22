@@ -42,7 +42,7 @@ class Welcome(tk.Frame):
 		lblWelcome.pack(pady=10, padx=10)
 		
 		btnLogin = ttk.Button(self, text="Login",
-			command=lambda: controller.show_Frame(User.Login)
+			command=lambda: controller.show_Frame(User.Login))
 		btnLogin.pack(pady=5, padx=5)
 		
 class User(tk.Frame):
@@ -53,7 +53,7 @@ class User(tk.Frame):
 
 class TMS(tk.Frame):
 	def __init__(self, parent, controller):
-		tk.Frame.__init__self, parent)
+		tk.Frame.__init__(self, parent)
 		
 		lblTMS = ttk.Label(self, text="Hello there, {user}", font=LARGE_FONT)
 		lblTMS.pack(pady=10, padx=10)
